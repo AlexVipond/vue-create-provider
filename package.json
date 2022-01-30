@@ -1,7 +1,7 @@
 {
   "name": "@alexvipond/vue-create-provider",
   "version": "0.0.0",
-  "description": "Nearly no-op function for creating type-safe compound components",
+  "description": "Nearly no-op function to support type inference for provide and inject",
   "module": "lib/index.es.js",
   "types": "lib/index.d.ts",
   "exports": {
