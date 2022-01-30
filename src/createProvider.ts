@@ -5,7 +5,7 @@ type Setup<Props> = DefineComponent<Props>['setup']
 export function createProvider<Props extends ComponentPropsOptions, T> (
   parentProps: Props,
   createProvided: (...params: Parameters<Setup<Props>>) => T,
-  parentRender: (provided: T, ...params: Parameters<Setup<Props>>) => RenderFunction,
+  parentRender: (props: Parameters<Setup<Props>>[0], ctx: Parameters<Setup<Props>>[1], provided: T) => RenderFunction,
   injectionKeyName: string,
 ) {
   const injectionKey: InjectionKey<T> = Symbol(injectionKeyName)
@@ -17,7 +17,7 @@ export function createProvider<Props extends ComponentPropsOptions, T> (
 
       provide(injectionKey, provided)
 
-      return parentRender(provided, props as Parameters<Setup<Props>>[0], ctx)
+      return parentRender(props as Parameters<Setup<Props>>[0], ctx, provided)
     }
   })
 
