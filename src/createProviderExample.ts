@@ -2,9 +2,6 @@ import { defineComponent, ref, inject, h } from 'vue'
 import { createProvider } from './createProvider'
 
 const { injectionKey, component: Parent } = createProvider(
-  // Make an injection key
-  Symbol('provided'),
-
   // Define props
   {
     initialCount: {
@@ -32,7 +29,10 @@ const { injectionKey, component: Parent } = createProvider(
       h('pre', { class: 'p-4 rounded bg-green-900 text-green-200' }, [`count: ${count.value}\nmessage: ${message.value}`]),
       ctx.slots.default() 
     ])
-  }
+  },
+
+  // Name your injection key
+  'example',
 )
 
 const Child = defineComponent({
