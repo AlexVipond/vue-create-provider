@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "types": [
+      "vue"
+    ],
+    "declaration": true,
+    "declarationDir": "types",
+    "emitDeclarationOnly": true
+  },
+  "include": [
+    "src/createProvider.ts",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
