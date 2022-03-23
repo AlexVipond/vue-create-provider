@@ -23,7 +23,7 @@ const { injectionKey, component: Parent } = createProvider(
   },
 
   // Render the parent
-  ({ count, message }, props, ctx) => {
+  (props, ctx, { count, message }) => {
     return () => h('div', [
       h('h2', { class: 'text-sm font-bold uppercase tracking-widest text-green-900' }, 'Parent'),
       h('pre', { class: 'p-4 rounded bg-green-900 text-green-200' }, [`count: ${count.value}\nmessage: ${message.value}`]),
