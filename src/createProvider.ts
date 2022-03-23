@@ -2,7 +2,7 @@ import { defineComponent, provide, InjectionKey, DefineComponent, RenderFunction
 
 type Setup<Props> = DefineComponent<Props>['setup']
 
-export function createProvider<Props extends ComponentPropsOptions, T> (
+export function createProvider<Props extends ComponentPropsOptions<any>, T> (
   parentProps: Props,
   createProvided: (...params: Parameters<Setup<Props>>) => T,
   parentRender: (props: Parameters<Setup<Props>>[0], ctx: Parameters<Setup<Props>>[1], provided: T) => RenderFunction,
